@@ -11,5 +11,11 @@ pipeline {
         sh 'docker build -t popcorn:$BUILD_NUMBER .'
       }
     }
+    stage('DOCKER') {
+      steps {
+        sh '''docker login -u chyld -p ____
+docker push eongsioco/popcorn:$BUILD_NUMBER'''
+      }
+    }
   }
 }
