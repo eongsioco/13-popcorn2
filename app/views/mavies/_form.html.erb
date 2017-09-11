@@ -1,0 +1,27 @@
+<%= form_with(model: mavy, local: true) do |form| %>
+  <% if mavy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mavy.errors.count, "error") %> prohibited this mavy from being saved:</h2>
+
+      <ul>
+      <% mavy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :mavy_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :released %>
+    <%= form.number_field :released, id: :mavy_released %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

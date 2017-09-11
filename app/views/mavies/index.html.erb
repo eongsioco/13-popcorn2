@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mavies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Released</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mavies.each do |mavy| %>
+      <tr>
+        <td><%= mavy.name %></td>
+        <td><%= mavy.released %></td>
+        <td><%= link_to 'Show', mavy %></td>
+        <td><%= link_to 'Edit', edit_mavy_path(mavy) %></td>
+        <td><%= link_to 'Destroy', mavy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mavy', new_mavy_path %>
